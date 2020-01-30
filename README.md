@@ -1,2 +1,3 @@
-# math-tools
-Handful math tools to have.
+# Math tools
+## Andrew Garcia
+Handy math tools to have.
