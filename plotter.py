@@ -18,7 +18,7 @@ ap.add_argument("-y","--y values", default = 13,nargs ='+', type=float,
                 help="y values with values spaced out (e.g. 4 31 13 23)")
 
 'database importer - load x,y data from excel file(s)'
-ap.add_argument("-p", "--path", nargs = '+', type =str,
+ap.add_argument("-p", "--path", default = 'C:\...your-file.xlsx', nargs = '+', type =str,
                 help="paths to datasets to plot")
 ap.add_argument("-s", "--sheet", default='Sheet1',
                 help="name of sheet containing dataset")
@@ -84,7 +84,7 @@ def manual():
     plt.title(args["title"])
     plt.xlabel(args["x label"])
     plt.ylabel(args["y label"])
-    plt.show()
     print(x,y)
+    plt.show()
 
-make() if args["path"] is not 'C:\[path]\[file].xlsx' else manual()
+make() if args["path"] is not 'C:\...your-file.xlsx' else manual()
