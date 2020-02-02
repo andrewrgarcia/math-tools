@@ -27,6 +27,7 @@ ap.add_argument("-xd", "--xcolumn", default='A1',
 ap.add_argument("-yd ", "--ycolumn", default='B1',
                 help="column with y data")
 
+ap.add_argument("-c","--color", default = None, help="plot line color")
 ap.add_argument("-lx","--x label", default = 'x', help="x label")
 ap.add_argument("-ly","--y label", default = 'y', help="y label")
 ap.add_argument("-t","--title", default = '', help="plot title")
@@ -66,7 +67,7 @@ def make():
         book=xw.Book(path)
         x = book.sheets[idx].range( args["xcolumn"] + ':' + args["xcolumn"][0]+str(lastRow(idx,book)) ).value
         y = book.sheets[idx].range( args["ycolumn"] + ':' + args["ycolumn"][0]+str(lastRow(idx,book)) ).value
-        plt.plot(x,y)
+        plt.plot(x,y,color=args["color"]) if args["color"] is not None else plt.plot(x,y)
 #        plt.plot(x,y,label=path)
         book.close()
 
@@ -79,7 +80,7 @@ def make():
 def manual():
     x, y = args["x values"], args["y values"]
     plt.style.use('ggplot')
-    plt.plot(x,y,'o')
+    plt.plot(x,y,color=args["color"]) if args["color"] is not None else plt.plot(x,y)
     plt.title(args["title"])
     plt.xlabel(args["x label"])
     plt.ylabel(args["y label"])
