@@ -24,24 +24,24 @@ ap.add_argument("-gb","--excel_grid_b", default = False, type = bool,
 
 ap.add_argument("-p","--path", default= r'Book.xlsx', type =str,
                 help="path to excel file containing A matrix")
+ap.add_argument("-pb","--path_b", default= r'Book2.xlsx', type =str,
+                help="path to excel file containing b matrix")
+
 ap.add_argument("-s","--sheet", default= r'Sheet1', type =str,
                 help="Sheet name of excel file containing A matrix (default: Sheet1)")
-
-ap.add_argument("-pb","--path_b", default= r'Book2.xlsx', type =str,
-                help="path to excel file containing A matrix")
 ap.add_argument("-sb","--sheet_b", default= r'Sheet1', type =str,
-                help="Sheet name of excel file containing A matrix (default: Sheet1)")
+                help="Sheet name of excel file containing b vector or matrix (default: Sheet1)")
 
 ap.add_argument("-a","--A_array", nargs ='+', type=float,
                 help="A matrix in Ax = b")
 ap.add_argument("-da","--A_dim", nargs ='+',type=int,
-                help="dimensions of A (type:'-d 6 6' for 6 x 6)")
+                help="dimensions of A (type:'-d 6 6' for 6 x 6 matrix)")
 
 
 ap.add_argument("-b", "--b_array", nargs ='+',type =float,
                 help="b vector (or matrix) in Ax = b")
 ap.add_argument("-db","--b_dim", nargs ='+',type=int,default=None,
-                help="dimensions of b if b not vector (type:'-db 6 6' for 6 x 6)")
+                help="dimensions of b if b is a matrix (type:'-db 6 6' for 6 x 6 matrix)")
 
 args = vars(ap.parse_args())
 
