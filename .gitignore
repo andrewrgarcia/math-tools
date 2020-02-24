@@ -1,1 +1,5 @@
 /Youtube
+*.xlsx
+!Book.xlsx
+!Book2.xlsx
+!dataset.xlsx

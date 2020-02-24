@@ -62,7 +62,6 @@ def excel_matrix(book, sheet):
     
     return mat
 
-
 if args["excel_grid_b"] is False:
     b = args["b_array"]
     dim_b = args["b_dim"]
