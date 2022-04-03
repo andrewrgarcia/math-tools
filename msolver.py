@@ -46,21 +46,24 @@ ap.add_argument("-db","--b_dim", nargs ='+',type=int,default=None,
 args = vars(ap.parse_args())
 
 
-import xlwings as xw
+# import xlwings as xw
 import string
-import pandas
+import pandas as pd
+
 
 def excel_matrix(book, sheet):
-    b00k=xw.Book(book) 
-    df=pandas.read_excel(book,sheet)
-    m,n= df.shape
-    m=m+1
-    lastcol=list(string.ascii_lowercase)[n-1]
-    mat = b00k.sheets[sheet].range('a1:'+lastcol+str(m)).value
-    mat = np.array(mat).reshape(m,n)
-    b00k.close() 
+    # b00k=xw.Book(book) 
+    # df=pandas.read_excel(book,sheet)
+    # m,n= df.shape
+    # m=m+1
+    # lastcol=list(string.ascii_lowercase)[n-1]
+    # mat = b00k.sheets[sheet].range('a1:'+lastcol+str(m)).value
+    # mat = np.array(mat).reshape(m,n)
+    # b00k.close() 
+    # return mat
+    df = pd.read_excel(book, sheet,header=None).to_numpy()
+    return df
     
-    return mat
 
 if args["excel_grid_b"] is False:
     b = args["b_array"]
