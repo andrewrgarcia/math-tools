@@ -29,7 +29,3 @@ b = | 12 |
 python msolver.py -A 1 4 3 2 3 1 2 10 2 -dA 3 3 -b 12 43 65
 
 ```
-
-#### Old video
-
-<a href="https://youtu.be/J4ynp58c0AA"><img src="figures/yt_logo.png" alt="drawing" width="400"/></a>
