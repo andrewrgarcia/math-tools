@@ -17,6 +17,8 @@ ap.add_argument("-pA","--path", default= '', type =str,
                 help="path to excel file containing A matrix e.g. A.xlsx")
 ap.add_argument("-pb","--path_b", default= '', type =str,
                 help="path to excel file containing b matrix e.g. b.xlsx")
+ap.add_argument("-f","--python_format", default= True, type =str,
+                help="Print as Python format")
 
 ap.add_argument("-sA","--sheet", default= r'Sheet1', type =str,
                 help="Sheet name of excel file containing A matrix (default: Sheet1)")
@@ -68,4 +70,9 @@ else:
 x = np.linalg.solve(a, b)
 print('')
 print('A x = b')
-print('\nA\n{} \nb\n{}\n\nx\n{}'.format(a,b,x))
+if args["python_format"]:
+    print('\nA=np.{} \nb=np.{}\n\nx=np.{}'.format(repr(a),repr(b),repr(x)))
+else:
+    print('\nA\n{} \nb\n{}\n\nx\n{}'.format(a,b,x))
+
+
