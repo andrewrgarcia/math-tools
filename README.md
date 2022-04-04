@@ -20,12 +20,12 @@ python msolver.py -pA $HOME/Desktop/A2.xlsx -pb b.xlsx
 
 '''matrix "A" and vector "b" both specified IN the terminal (not recommended for large matrices) 
 A = | 1  4 3 |
- 	| 2  3 1 |
- 	| 2 10 2 |
+    | 2  3 1 |
+    | 2 10 2 |
 b = | 12 |	
-	| 43 |
-	| 65 |
-	''':
+    | 43 |
+    | 65 |
+''':
 python msolver.py -A 1 4 3 2 3 1 2 10 2 -dA 3 3 -b 12 43 65
 
 ```
